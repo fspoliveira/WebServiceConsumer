@@ -25,11 +25,11 @@ public class ContatoController {
          return c;
     }
    
-     public Contato deleteContato(String email){
+     public String deleteContato(String email){
          ContatoConsumer cc = new ContatoConsumer();
-         Contato c = new Contato();
-         c = cc.getContato(email);
-         return c;
+         cc.removeContato(email);
+         return "";
+         
     }
     
 }

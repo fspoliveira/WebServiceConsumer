@@ -17,8 +17,10 @@ import javax.xml.ws.Service;
  * @author fsantiago
  */
 public class ContatoConsumer {
-
-    public Contato getContato(String email) {
+    
+     ContatoServer cs;
+    
+    public ContatoConsumer(){
         URL url = null;
         
         try {
@@ -29,11 +31,25 @@ public class ContatoConsumer {
         
         QName qname = new QName("http://webservice.fiap.com.br/", "ContatoServerImplService");
         Service service = Service.create(url, qname);
-        ContatoServer cs = service.getPort(ContatoServer.class);
+         cs = service.getPort(ContatoServer.class);
+        
+    }
+    
+    
+    public Contato getContato(String email) {
+       
         Contato c = cs.getContact(email);
         System.out.println(c.getEmail());
         System.out.println(c.getNome());
         
         return c;
+    }
+    
+    
+    public String removeContato(String email) {
+       
+        
+       cs.deleteContact(email);
+       return "deletado";
     }
 }

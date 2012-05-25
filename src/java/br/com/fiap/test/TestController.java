@@ -15,6 +15,7 @@ public class TestController {
     public static void main(String args[]){
         ContatoController cc = new ContatoController();
         cc.getContato("fspo1@hotmail.com");
+        cc.deleteContato("cmarquesani@hotmail.com");
     }
         
 }
