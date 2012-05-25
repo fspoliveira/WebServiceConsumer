@@ -28,8 +28,13 @@ public class ContatoController {
      public String deleteContato(String email){
          ContatoConsumer cc = new ContatoConsumer();
          cc.removeContato(email);
-         return "";
-         
+         return "";         
     }
+     
+     public String addContact(Contato contato){
+         ContatoConsumer cc = new ContatoConsumer();
+         cc.addContact(contato);
+         return "ok";
+     }
     
 }

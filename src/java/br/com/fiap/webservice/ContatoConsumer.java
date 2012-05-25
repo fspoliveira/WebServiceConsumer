@@ -52,4 +52,9 @@ public class ContatoConsumer {
        cs.deleteContact(email);
        return "deletado";
     }
+    
+    public String addContact(Contato contato){
+       cs.addContact(contato);
+       return "ok";
+    }
 }

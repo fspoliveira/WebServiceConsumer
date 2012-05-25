@@ -4,6 +4,7 @@
  */
 package br.com.fiap.test;
 
+import br.com.fiap.bean.Contato;
 import br.com.fiap.controller.ContatoController;
 
 /**
@@ -16,6 +17,11 @@ public class TestController {
         ContatoController cc = new ContatoController();
         cc.getContato("fspo1@hotmail.com");
         cc.deleteContato("cmarquesani@hotmail.com");
+        
+        Contato c = new Contato();
+        c.setEmail("fa10ti01@yahoo.com.br");
+        c.setNome("Fatima Pedrazzanni");
+        cc.addContact(c);
     }
         
 }
