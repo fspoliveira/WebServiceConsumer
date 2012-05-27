@@ -36,6 +36,30 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
+                                <h:outputText value="Endereço"/>
+                            </f:facet>
+                            <h:outputText value="#{contato.endereco}" />
+                        </p:column>
+                         <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Cidade"/>
+                            </f:facet>
+                            <h:outputText value="#{contato.cidade}" />
+                        </p:column>
+                         <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Estado"/>
+                            </f:facet>
+                            <h:outputText value="#{contato.estado}" />
+                        </p:column>
+                         <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="País"/>
+                            </f:facet>
+                            <h:outputText value="#{contato.pais}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
                                 <h:outputText value="Alterar"/>
                             </f:facet>
                             <p:commandButton actionListener="#{contatoC.prepararAlterarContato}" icon="ui-icon-arrowrefresh-1-w" update=":form:infosContato" oncomplete="dialogGerContato.show()" />
@@ -59,18 +83,35 @@
                             <h:outputLabel for="emailContato" value="Email" />
                             <h:inputText id="emailContato" value="#{contatoC.contato.email}"
                                          required="true">
-                                <f:validateLength minimum="2" /> 
+                                <f:validateLength minimum="2"/> 
                             </h:inputText>                            
                             <h:outputLabel for="nomeContato" value="Nome" />
                             <h:inputText id="nomeContato" value="#{contatoC.contato.nome}"
                                          required="true">
-                                <f:validateLength minimum="2" /> 
+                                <f:validateLength minimum="2"/> 
                             </h:inputText> 
                             <h:outputLabel for="telContato" value="Telefone" />
-                            <h:inputText id="telContato" value="#{contatoC.contato.telefone}"
-                                        >
-                              
-                            </h:inputText> 
+                            <h:inputText id="telContato" value="#{contatoC.contato.telefone}"/>                             
+                            <h:outputLabel for="endContato" value="Endereço" />
+                            <h:inputText id="endContato" value="#{contatoC.contato.endereco}"
+                                             required="true">
+                                <f:validateLength minimum="2"/> 
+                            </h:inputText>
+                            <h:outputLabel for="cidContato" value="Cidade" />
+                            <h:inputText id="cidContato" value="#{contatoC.contato.cidade}"
+                                             required="true">
+                             <f:validateLength minimum="2"/> 
+                            </h:inputText>
+                            <h:outputLabel for="estContato" value="Estado" />
+                            <h:inputText id="estContato" value="#{contatoC.contato.estado}"
+                                             required="true">
+                             <f:validateLength minimum="2"/> 
+                            </h:inputText>
+                            <h:outputLabel for="estContato" value="País" />
+                            <h:inputText id="paisContato" value="#{contatoC.contato.pais}"
+                                             required="true">
+                             <f:validateLength minimum="2"/> 
+                            </h:inputText>
                         </h:panelGrid>
                     </h:form>
                 </p:dialog>
