@@ -47,7 +47,6 @@ public class ContatoController {
         Contato[] contatos = cc.list();
         List<Contato> contact = new ArrayList<Contato>();
         contact.addAll(Arrays.asList(contatos));
-
         listaContatos = new ListDataModel(contact);
 
         return listaContatos;
@@ -60,7 +59,7 @@ public class ContatoController {
         return c;
     }
 
-    public String excluirContato(String email) {
+    public String excluirContato() {
         Contato contatoTemp = (Contato) (listaContatos.getRowData());
         ContatoConsumer cc = new ContatoConsumer();
         cc.removeContato(contatoTemp);
