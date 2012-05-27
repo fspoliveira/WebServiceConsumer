@@ -18,9 +18,9 @@
                     <p:dataTable id="tabela" var="contato" value="#{contatoC.listarContatos}">
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="Descrição do Convênio"/>
+                                <h:outputText value="Email contato"/>
                             </f:facet>
-                            <h:outputText value="#{contato.descricao}" />
+                            <h:outputText value="#{contato.email}" />
                         </p:column>
                         <p:column>
                             <f:facet name="header">
@@ -45,7 +45,7 @@
                         </p:menubar>  
                         <h:panelGrid id="infosContato" columns="2" style="margin-bottom:10px">
                             <h:outputLabel for="descContato" value="Convênio:" />
-                            <h:inputText id="descContato" value="#{contatoC.contato.descricao}"
+                            <h:inputText id="descContato" value="#{contatoC.contato.email}"
                                          required="true">
                                  <f:validateLength minimum="2" /> 
                             </h:inputText>

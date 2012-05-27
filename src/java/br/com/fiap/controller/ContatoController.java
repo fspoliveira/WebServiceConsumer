@@ -22,31 +22,46 @@ import javax.faces.model.ListDataModel;
 @ManagedBean(name = "contatoC")
 @SessionScoped
 public class ContatoController {
-    
+
     private Contato contato;
     private DataModel listaContatos;
-    
-     public DataModel getListarContatos() {
+
+    public Contato getContato() {
+        return contato;
+    }
+
+    public void setContato(Contato contato) {
+        this.contato = contato;
+    }
+
+    public DataModel getListaContatos() {
+        return listaContatos;
+    }
+
+    public void setListaContatos(DataModel listaContatos) {
+        this.listaContatos = listaContatos;
+    }
+
+    public DataModel getListarContatos() {
         ContatoConsumer cc = new ContatoConsumer();
         Contato[] contatos = cc.list();
         List<Contato> contact = new ArrayList<Contato>();
         contact.addAll(Arrays.asList(contatos));
-        
+
         listaContatos = new ListDataModel(contact);
 
         return listaContatos;
     }
-    
 
     public Contato getContato(Contato contato) {
         ContatoConsumer cc = new ContatoConsumer();
         Contato c;
-        c = cc.getContato(contato);        
+        c = cc.getContato(contato);
         return c;
     }
 
     public String excluirContato(String email) {
-        Contato contatoTemp = (Contato) (listaContatos.getRowData()) ;
+        Contato contatoTemp = (Contato) (listaContatos.getRowData());
         ContatoConsumer cc = new ContatoConsumer();
         cc.removeContato(contatoTemp);
         return "contato";
@@ -54,16 +69,14 @@ public class ContatoController {
 
     public void adicionarContato(ActionEvent actionEvent) {
         ContatoConsumer cc = new ContatoConsumer();
-        cc.addContact(contato);       
-    }
-    
-     public void prepararAdicionarConvenio(ActionEvent actionEvent){
-        contato = new Contato();
-    }
-    
-    public void prepararAlterarConvenio(ActionEvent actionEvent){
-        contato = (Contato) (listaContatos.getRowData());
+        cc.addContact(contato);
     }
 
-   
+    public void prepararAdicionarConvenio(ActionEvent actionEvent) {
+        contato = new Contato();
+    }
+
+    public void prepararAlterarConvenio(ActionEvent actionEvent) {
+        contato = (Contato) (listaContatos.getRowData());
+    }
 }
