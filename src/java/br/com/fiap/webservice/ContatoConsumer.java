@@ -2,6 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package br.com.fiap.webservice;
 
 import br.com.fiap.bean.Contato;
@@ -16,6 +17,7 @@ import javax.xml.ws.Service;
  *
  * @author fsantiago
  */
+
 public class ContatoConsumer {
 
     ContatoServer cs;
@@ -40,7 +42,6 @@ public class ContatoConsumer {
         Contato c = cs.getContact(contato);
         System.out.println(c.getEmail());
         System.out.println(c.getNome());
-
         return c;
     }
 
@@ -54,10 +55,7 @@ public class ContatoConsumer {
         return "ok";
     }
     
-    public Contato[] list(){
-   
-        return cs.listContacts();
-        
-        
+    public Contato[] list(){   
+        return cs.listContacts();  
     }
 }

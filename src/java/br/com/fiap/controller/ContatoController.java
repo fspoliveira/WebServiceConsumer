@@ -25,7 +25,6 @@ public class ContatoController {
 
     private Contato contato;
     private DataModel listaContatos;
-    
 
     public Contato getContato() {
         return contato;
@@ -78,5 +77,10 @@ public class ContatoController {
 
     public void prepararAlterarContato(ActionEvent actionEvent) {
         contato = (Contato) (listaContatos.getRowData());
+    }
+
+    public void alterarContato(ActionEvent actionEvent) {
+        ContatoConsumer cc = new ContatoConsumer();
+      
     }
 }
