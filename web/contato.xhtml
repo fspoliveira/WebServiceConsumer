@@ -7,10 +7,10 @@
       xmlns:p="http://primefaces.org/ui">
     <ui:composition template="/home.xhtml">
         <ui:define name="contato">
-            <p:panel header="Cadastro de Convênio" style="border: #ffffff" toggleable="true" closable="false" toggleSpeed="500" closeSpeed="2000" widgetVar="panel" >
+            <p:panel header="Cadastro de Contatos" style="border: #ffffff" toggleable="true" closable="false" toggleSpeed="500" closeSpeed="2000" widgetVar="panel" >
                 <h:form prependId="false" id="menulateral">
                     <p:menubar>
-                        <p:menuitem value="Novo Convênio" actionListener="#{contatoC.prepararAdicionarContato}" update=":form:infosContato" oncomplete="dialogGerContato.show()"  icon="ui-icon-document"/>                       
+                        <p:menuitem value="Novo Contato" actionListener="#{contatoC.prepararAdicionarContato}" update=":form:infosContato" oncomplete="dialogGerContato.show()"  icon="ui-icon-document"/>                       
                         <p:menuitem value="Sair" url="/home.jsf" icon="ui-icon-extlink"/>
                     </p:menubar>                    
                 </h:form>
@@ -37,7 +37,7 @@
                     </p:dataTable>                    
                 </h:form>
                 
-                <p:dialog header="Gerencia Convênio" widgetVar="dialogGerContato"  resizable="false" modal="false" showEffect="slide" width="500">
+                <p:dialog header="Gerencia Contato" widgetVar="dialogGerContato"  resizable="false" modal="false" showEffect="slide" width="500">
                     <h:form prependId="false" id="form">
                         <p:menubar>
                             <p:menuitem  value="Salvar" update=":form1:tabela" oncomplete="dialogGerContato.hide();" actionListener="#{contatoC.adicionarContato}" icon="ui-icon-disk" />

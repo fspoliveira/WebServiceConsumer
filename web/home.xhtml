@@ -22,22 +22,17 @@
     <h:body>
         <p:layout fullPage="true">
             <p:layoutUnit position="north" size="150" resizable="false" closable="false" collapsible="false">
-                <p:graphicImage value="/images/agenda.jpg" />
-                <h:outputText value="Usuário: #{loginC.nomeUserLogado}" style="position: absolute;right: 5%;bottom: 5%" />
+                <p:graphicImage value="/images/agenda.jpg" />                
             </p:layoutUnit>
-
-                <p:layoutUnit position="south" size="45" header="Sobre" resizable="true" closable="true" collapsible="true">
+            <p:layoutUnit position="south" size="45" header="Sobre" resizable="true" closable="true" collapsible="true">
                 <h:outputText value="ContactSystem © 2012" />
             </p:layoutUnit>
-
             <p:layoutUnit  position="west" size="170"  resizable="true" closable="false" collapsible="true">
                 <h:form>
                     <p:menu style="border: #ffffff">
                         <p:submenu label="Cadastros">
-                            <p:menuitem value="Contatos" url="/contato.jsf" ajax="true" icon="ui-icon-star"/>                            
-                            
+                            <p:menuitem value="Contatos" url="/contato.jsf" ajax="true" icon="ui-icon-star"/>   
                         </p:submenu>
-                       
                     </p:menu>
                 </h:form>
             </p:layoutUnit> 
