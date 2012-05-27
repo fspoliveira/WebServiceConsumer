@@ -18,9 +18,21 @@
                     <p:dataTable id="tabela" var="contato" value="#{contatoC.listarContatos}">
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="Email contato"/>
+                                <h:outputText value="Email"/>
                             </f:facet>
                             <h:outputText value="#{contato.email}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Nome"/>
+                            </f:facet>
+                            <h:outputText value="#{contato.nome}" />
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Telefone"/>
+                            </f:facet>
+                            <h:outputText value="#{contato.telefone}" />
                         </p:column>
                         <p:column>
                             <f:facet name="header">
@@ -36,7 +48,7 @@
                         </p:column>
                     </p:dataTable>                    
                 </h:form>
-                
+
                 <p:dialog header="Gerencia Contato" widgetVar="dialogGerContato"  resizable="false" modal="false" showEffect="slide" width="500">
                     <h:form prependId="false" id="form">
                         <p:menubar>
@@ -44,12 +56,21 @@
                             <p:menuitem value="Alterar" update=":form1:tabela" oncomplete="dialogGerContato.hide();" actionListener="#{contatoC.alterarContato}" icon="ui-icon-arrowrefresh-1-w"/>                    
                         </p:menubar>  
                         <h:panelGrid id="infosContato" columns="2" style="margin-bottom:10px">
-                            <h:outputLabel for="descContato" value="Convênio:" />
+                            <h:outputLabel for="emailContato" value="Email" />
                             <h:inputText id="emailContato" value="#{contatoC.contato.email}"
                                          required="true">
-                                 <f:validateLength minimum="2" /> 
-                            </h:inputText>
-                            <p:message for="emailContato" id="msgFirstname" /> 
+                                <f:validateLength minimum="2" /> 
+                            </h:inputText>                            
+                            <h:outputLabel for="nomeContato" value="Nome" />
+                            <h:inputText id="nomeContato" value="#{contatoC.contato.nome}"
+                                         required="true">
+                                <f:validateLength minimum="2" /> 
+                            </h:inputText> 
+                            <h:outputLabel for="telContato" value="Telefone" />
+                            <h:inputText id="telContato" value="#{contatoC.contato.telefone}"
+                                         required="true">
+                                <f:validateLength minimum="2" /> 
+                            </h:inputText> 
                         </h:panelGrid>
                     </h:form>
                 </p:dialog>
