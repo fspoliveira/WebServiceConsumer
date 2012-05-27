@@ -6,6 +6,7 @@ package br.com.fiap.controller;
 
 import br.com.fiap.bean.Contato;
 import br.com.fiap.webservice.ContatoConsumer;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -35,6 +36,11 @@ public class ContatoController {
          ContatoConsumer cc = new ContatoConsumer();
          cc.addContact(contato);
          return "ok";
+     }
+     
+     public Contato[] list(){
+        ContatoConsumer cc = new ContatoConsumer();      
+        return cc.list();
      }
     
 }
