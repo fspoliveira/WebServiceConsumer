@@ -17,18 +17,21 @@ public class TestController {
     public static void main(String args[]) {
         ContatoController cc = new ContatoController();
         
-        cc.getContato("fspo1@hotmail.com");
+        Contato c = new Contato();
+        c.setEmail("fspo1@hotmail.com");
+        
+        cc.getContato(c);
         // cc.deleteContato("cmarquesani@hotmail.com");
 
-        Contato c = new Contato();
+       
         
         c.setEmail("fa10ti01@yahoo.com.br");
         c.setNome("Fatima Pedrazzanni");
-        cc.addContact(c);
+       
 
-        cc.getContato("fa10ti01@yahoo.com.br");
+        cc.getContato(c);
 
-        System.out.println(cc.list());
+        System.out.println(cc.getListarContatos());
         
       
       

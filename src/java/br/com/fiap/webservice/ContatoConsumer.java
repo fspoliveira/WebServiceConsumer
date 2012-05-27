@@ -35,17 +35,17 @@ public class ContatoConsumer {
 
     }
 
-    public Contato getContato(String email) {
+    public Contato getContato(Contato contato) {
 
-        Contato c = cs.getContact(email);
+        Contato c = cs.getContact(contato);
         System.out.println(c.getEmail());
         System.out.println(c.getNome());
 
         return c;
     }
 
-    public String removeContato(String email) {
-        cs.deleteContact(email);
+    public String removeContato(Contato contato) {
+        cs.deleteContact(contato);
         return "deletado";
     }
 

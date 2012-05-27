@@ -13,6 +13,12 @@ public class Contato {
 	public Contato(){
 		
 	}
+        
+        public Contato(String email){
+            super();
+            this.email = email;
+        }
+        
 		
 	public Contato(String email, String nome, String telefone, String endereco,
 			String cidade, String estado, String pais) {

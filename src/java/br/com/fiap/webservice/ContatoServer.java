@@ -11,7 +11,7 @@ import javax.jws.soap.SOAPBinding.Style;
 public interface ContatoServer {
 	
 	@WebMethod String addContact(Contato contato);
-	@WebMethod String deleteContact(String email);
-	@WebMethod Contato getContact(String email);	
+	@WebMethod String deleteContact(Contato contato);
+	@WebMethod Contato getContact(Contato contato);	
 	@WebMethod Contato[] listContacts();	
 }
