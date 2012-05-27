@@ -45,11 +45,11 @@
                         </p:menubar>  
                         <h:panelGrid id="infosContato" columns="2" style="margin-bottom:10px">
                             <h:outputLabel for="descContato" value="Convênio:" />
-                            <h:inputText id="descContato" value="#{contatoC.contato.email}"
+                            <h:inputText id="emailContato" value="#{contatoC.contato.email}"
                                          required="true">
                                  <f:validateLength minimum="2" /> 
                             </h:inputText>
-                            <p:message for="descContato" id="msgFirstname" /> 
+                            <p:message for="emailContato" id="msgFirstname" /> 
                         </h:panelGrid>
                     </h:form>
                 </p:dialog>

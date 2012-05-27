@@ -25,6 +25,7 @@ public class ContatoController {
 
     private Contato contato;
     private DataModel listaContatos;
+    
 
     public Contato getContato() {
         return contato;
@@ -71,11 +72,11 @@ public class ContatoController {
         cc.addContact(contato);
     }
 
-    public void prepararAdicionarConvenio(ActionEvent actionEvent) {
+    public void prepararAdicionarContato(ActionEvent actionEvent) {
         contato = new Contato();
     }
 
-    public void prepararAlterarConvenio(ActionEvent actionEvent) {
+    public void prepararAlterarContato(ActionEvent actionEvent) {
         contato = (Contato) (listaContatos.getRowData());
     }
 }
