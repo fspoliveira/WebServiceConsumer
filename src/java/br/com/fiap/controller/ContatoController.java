@@ -6,6 +6,8 @@ package br.com.fiap.controller;
 
 import br.com.fiap.bean.Contato;
 import br.com.fiap.webservice.ContatoConsumer;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -14,33 +16,35 @@ import javax.faces.bean.SessionScoped;
  *
  * @author fsantiago
  */
-
-@ManagedBean(name="convenioC")
+@ManagedBean(name = "convenioC")
 @SessionScoped
 public class ContatoController {
-    
-    public Contato getContato(String email){
-         ContatoConsumer cc = new ContatoConsumer();
-         Contato c = new Contato();
-         c = cc.getContato(email);
-         return c;
+
+    public Contato getContato(String email) {
+        ContatoConsumer cc = new ContatoConsumer();
+        Contato c;
+        c = cc.getContato(email);
+        return c;
     }
-   
-     public String deleteContato(String email){
-         ContatoConsumer cc = new ContatoConsumer();
-         cc.removeContato(email);
-         return "";         
+
+    public String deleteContato(String email) {
+        ContatoConsumer cc = new ContatoConsumer();
+        cc.removeContato(email);
+        return "";
     }
-     
-     public String addContact(Contato contato){
-         ContatoConsumer cc = new ContatoConsumer();
-         cc.addContact(contato);
-         return "ok";
-     }
-     
-     public Contato[] list(){
-        ContatoConsumer cc = new ContatoConsumer();      
-        return cc.list();
-     }
-    
+
+    public String addContact(Contato contato) {
+        ContatoConsumer cc = new ContatoConsumer();
+        cc.addContact(contato);
+        return "ok";
+    }
+
+    public List<Contato> list() {
+        ContatoConsumer cc = new ContatoConsumer();
+        Contato[] contatos = cc.list();
+        List<Contato> contact = new ArrayList<Contato>();
+        contact.addAll(Arrays.asList(contatos));
+
+        return contact;
+    }
 }

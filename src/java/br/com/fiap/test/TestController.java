@@ -30,15 +30,7 @@ public class TestController {
 
         System.out.println(cc.list());
         
-        Contato[] contatos = cc.list();
-        Contato contato ;
-        
-		for (int i=0; i<contatos.length; i++){
-                    contato = contatos[i];
-                    System.out.println(contato.getNome());
-                    System.out.println(contato.getCidade());
-                }
-        
+      
       
     }
 }
